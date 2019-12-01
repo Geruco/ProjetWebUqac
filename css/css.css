@@ -1,0 +1,175 @@
+html, body{
+    height: 120%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 1fr 4fr 0.66fr 0.8fr 40px;
+    grid-template-rows: 0 50px 0.4fr 0.4fr 0.4fr 0.6fr 1.2fr 1fr;
+
+}
+
+#Overhead{
+    grid-column: 1/6;
+    grid-row: 1/2;
+}
+
+#MenuBar{
+    grid-column: 1/6;
+    grid-row: 2/3;
+}
+
+#Conteneurimage{
+    grid-column: 1/2;
+    grid-row: 3/7;
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+#ContourImage{
+    //border: 2px solid red;
+    width: 90%;
+    height: 85%;
+
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+}
+.Image{
+    width: 20vh;
+    height: 30vh;
+}
+.ImageSuggestion{
+    width: 30%;
+    height: 40%;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 3%;
+}
+#ConteneurInfos{
+    grid-column: 2/4;
+    grid-row: 3/5;
+    padding: 10px;
+
+}
+#Titre{
+    font-size: 1.5em;
+}
+
+#ConteneurResume{
+    grid-column: 2/4;
+    grid-row: 5/7 ;
+}
+#ConteneurAchat{
+    grid-column: 4/5;
+    grid-row: 4/6;
+    background-color: lightblue;
+    border: 1px solid black;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+}
+#ConteneurAchat *{
+    font-size: 2vh;
+}
+#QuantiteAchat{
+    width: 60%;
+    height: 35%;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 2vh;
+}
+#BoutonAchat{
+    margin-top: auto;
+    grid-column: 1;
+    grid-row: 2/3;
+
+    width: 60%;
+    height: 35%;
+    margin-left: 20%;
+    margin-right: 20%;
+
+
+}
+@media (min-width: 1281px){
+    #BoutonAchat{
+        font-size: 1.8vh;
+    }
+}
+@media (max-width: 1280px){
+    #BoutonAchat{
+        font-size: 1vh;
+    }
+}
+#ConteneurQuantite{
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+}
+#AuteurEditeurDate, #Prix, #Resume{
+    margin-left: 10px;
+}
+
+#ConteneurPanier{
+    background-color: green;
+    width: 70px;
+    height: 45px;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Carousel{
+    grid-row: 7/8;
+    grid-column: 1/6;
+
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr 1fr 0.3fr;
+    grid-template-rows: 1fr 5fr;
+}
+#Carousel b{
+    grid-row: 1/2;
+    grid-column: 1/4;
+
+    font-size: 1.2em;
+    margin-left: 4%;
+    margin-top: 4%;
+}
+#Suggestion1{
+    grid-row: 2/3;
+    grid-column: 2/3;
+
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 3%;
+    //border: solid 1px black;
+
+}
+#Suggestion2{
+    grid-row: 2/3;
+    grid-column: 3/4;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 3%;
+}
+#Suggestion3{
+    grid-row: 2/3;
+    grid-column: 4/5;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 3%;
+}
+footer{
+    background-color: black;
+    grid-row: 8/9;
+    grid-column: 1/6;
+}
