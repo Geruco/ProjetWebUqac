@@ -56,8 +56,24 @@ function toutProduits(){
 }
 
 function enVedette(){
+    let nbProd = 0;
     bdd.forEach(function(produit){
         if(produit.priorite == 1) {
+
+            console.log("modulo : "+nbProd+" / 3 =", nbProd%3);
+            if(nbProd%3 == 0 || nbProd == 0){
+                let newSlide = document.createElement("div");
+                newSlide.setAttribute("class", "carousel-item");
+                let row = document.createElement("div");
+                row.setAttribute("class", "row");
+                newSlide.appendChild(row);
+
+                // console.log("carousel-inner : ", document.querySelector(".carousel-inner"));
+                document.querySelector(".carousel-inner").appendChild(newSlide);
+                if(document.querySelectorAll(".carousel-item").length === 1){
+                    newSlide.classList.add("active");
+                }
+            }
             let caseProduit = afficherProduit(produit);
             caseProduit.addEventListener("click", function(e){
                 // console.log(caseProduit.id);
@@ -65,7 +81,18 @@ function enVedette(){
                 console.log("changement de hash");
                 e.preventDefault();
             })
-            document.querySelector("#vedette").appendChild(caseProduit);
+            console.log("Trunc : ", Math.trunc(nbProd/3))
+            document.querySelectorAll(".carousel-item")[Math.trunc(nbProd/3)].querySelector(".row").appendChild(caseProduit);
+            nbProd ++;
         }
     })
+    startCarousel();
+}
+
+function startCarousel() {
+
+    // manual carousel controls
+    $('.next').click(function(){ $('.carousel').carousel('next');return false; });
+    $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
+
 }

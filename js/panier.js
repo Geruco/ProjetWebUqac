@@ -64,6 +64,7 @@ function addPanier(elem) {
     panier.splice(parentClass - 1, 1, {id: parentClass, Qt: input.value});
     localStorage.removeItem("Panier");
     localStorage.setItem("Panier", JSON.stringify(panier));
+    modifTotal();
     console.log(panier);
   };
 
@@ -96,6 +97,7 @@ function addPanier(elem) {
       JSON.parse(localStorage.getItem("Panier")).forEach(function (elem) {
         addPanier(elem);
       });
+      modifTotal();
       console.log(lePanier);
     };
   };
@@ -106,6 +108,19 @@ function addPanier(elem) {
   divPanier.appendChild(div);
   total += bdd[id - 1].prix * quantite;
 
+  document.getElementById("total").innerHTML = "Total: " + total + " $";
+}
+
+function modifTotal() {
+  total = 0;
+
+  for (let i = 0; i < newDiv.length; i++) {
+
+    let children = newDiv[i].children;
+
+    let prix2 = children[3].innerHTML.replace(" $/unité", "");
+    total += ((prix2) * (ipt[i].value));
+  }
   document.getElementById("total").innerHTML = "Total: " + total + " $";
 }
 

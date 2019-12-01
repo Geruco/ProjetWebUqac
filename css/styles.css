@@ -72,7 +72,7 @@ a.preview {
 	content: "";
 	width: 40px;
 	height: 2px;
-	background: #3b86c4;
+	background: #5b7412;
 }
 
 .info .description {
@@ -90,4 +90,68 @@ a.preview {
 	font-weight: 700;
 	color: #372f2b;
 	line-height: 26px;
+}
+
+.btn-buy {
+  color: #FFFFFF;
+  background-color: #5B7412;
+  border-color: #FFFFFF;
+}
+
+.btn-buy:hover,
+.btn-buy:focus,
+.btn-buy:active,
+.btn-buy.active,
+.open .dropdown-toggle.btn-buy {
+  color: #FFFFFF;
+  background-color: #9EB35F;
+}
+
+.btn-buy:active,
+.btn-buy.active,
+.open .dropdown-toggle.btn-buy {
+  background-image: none;
+}
+
+.btn-buy.disabled,
+.btn-buy[disabled],
+fieldset[disabled] .btn-buy,
+.btn-buy.disabled:hover,
+.btn-buy[disabled]:hover,
+fieldset[disabled] .btn-buy:hover,
+.btn-buy.disabled:focus,
+.btn-buy[disabled]:focus,
+fieldset[disabled] .btn-buy:focus,
+.btn-buy.disabled:active,
+.btn-buy[disabled]:active,
+fieldset[disabled] .btn-buy:active,
+.btn-buy.disabled.active,
+.btn-buy[disabled].active,
+fieldset[disabled] .btn-buy.active {
+  background-color: #5B7412;
+}
+
+.btn-buy .badge {
+  color: #5B7412;
+  background-color: #FFFFFF;
+}
+
+.controls-top{
+    z-index: 1;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active,
+.carousel-inner>.row-equal.next,
+.carousel-inner>.row-equal.prev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left,
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
 }
