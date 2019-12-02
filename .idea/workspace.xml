@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ea95a161-162e-4d9a-9adf-f6bb00a9b01b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accueil.html" beforeDir="false" afterPath="$PROJECT_DIR$/accueil.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/css.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/LoadProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/LoadProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/panier.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/panier.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/produitsHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/produitsHome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/produit.html" beforeDir="false" afterPath="$PROJECT_DIR$/produit.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +77,8 @@
       <workItem from="1575226021492" duration="359000" />
       <workItem from="1575226396703" duration="5087000" />
       <workItem from="1575238010568" duration="770000" />
+      <workItem from="1575240729616" duration="3683000" />
+      <workItem from="1575252173760" duration="1374000" />
     </task>
     <servers />
   </component>
@@ -78,6 +86,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="585" y="114" key="CommitChangelistDialog2" timestamp="1575255512264">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="585" y="114" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1575255512264" />
     <state x="740" y="264" key="FileChooserDialogImpl" timestamp="1574866070409">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

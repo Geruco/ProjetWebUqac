@@ -1,0 +1,28 @@
+#navbar{
+    background-color: #343a40;
+}
+#DivisionProduits, #DivisionVedettes{
+    text-align: center;
+    color:white;
+
+}
+#content{
+    background-color: #5b7412;
+}
+
+.caseProduit > :nth-child(2) {
+    height: 32%;
+    padding-left: 10px;
+}
+
+#vedette{
+    border-bottom: 1px solid black;
+}
+
+#showPanier{
+    width: 4.5%;
+    border-radius: 5px;
+}
+#iconPanier{
+    color: black;
+}

@@ -61,11 +61,17 @@ function addPanier(elem) {
     let ipt = this;
     let panier = JSON.parse(localStorage.getItem("Panier"));
     let parentClass = ipt.parentNode.id;
-    panier.splice(parentClass - 1, 1, {id: parentClass, Qt: input.value});
+    let index;
+    for (let i; i<panier.length; i++){
+      if(panier[i].id == parentClass){
+        index = i;
+      }
+    }
+    panier.splice(index, 1, {id: parseInt(parentClass), Qt: parseInt(input.value)});
+    console.log(panier);
     localStorage.removeItem("Panier");
     localStorage.setItem("Panier", JSON.stringify(panier));
     modifTotal();
-    console.log(panier);
   };
 
   qt.appendChild(input);

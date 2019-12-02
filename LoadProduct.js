@@ -1,5 +1,6 @@
 function initProduit(){
 
+    //Fonction pour charger les suggestions de la page
     function loadSuggestion(Numero,Item){
         let Receveur;
         //Identifie pour quelle suggestion on fait la fonction
@@ -17,10 +18,16 @@ function initProduit(){
         SuggImg.src = "img/"+(Item.id).toString()+".jpg";
         SuggImg.classList="card-img-top ImageSuggestion";
 
-        let SuggDiv=document.createElement("div");
-        SuggDiv.classList="card-body";
+        let SuggDivCont=document.createElement("div");
+        SuggDivCont.classList="card-body";
 
-        let SuggNom=document.createElement("h5");
+        let SuggDiv1 = document.createElement("div");
+        SuggDiv1.classList="SuggTitre";
+
+        let SuggDiv2 = document.createElement("div");
+        SuggDiv2.classList="SuggReste";
+
+        let SuggNom=document.createElement("h6");
         SuggNom.classList="card-title";
         SuggNom.innerText=Item.nom;
 
@@ -29,21 +36,24 @@ function initProduit(){
         SuggPrix.innerText=Item.prix+"$";
 
         let SuggLien=document.createElement("a");
-        SuggLien.classList="btn btn-primary";
+        SuggLien.classList="btn btn-primary btn-info boutonSuggestion";
         SuggLien.innerText="Visiter la page";
         SuggLien.onclick=function(e){
             // goProduit(Item.id);
             window.location.hash = "produit-"+Item.id;
             console.log("changement de hash");
             e.preventDefault();
-        }
+        };
         //Assemble la carte
-        SuggDiv.appendChild(SuggNom);
-        SuggDiv.appendChild(SuggPrix);
-        SuggDiv.appendChild(SuggLien);
+        SuggDiv1.appendChild(SuggNom);
+        SuggDiv2.appendChild(SuggPrix);
+        SuggDiv2.appendChild(SuggLien);
+
+        SuggDivCont.appendChild(SuggDiv1);
+        SuggDivCont.appendChild(SuggDiv2);
 
         Receveur.appendChild(SuggImg);
-        Receveur.appendChild(SuggDiv);
+        Receveur.appendChild(SuggDivCont);
     }
 
 
@@ -139,7 +149,7 @@ function initProduit(){
 
             //Teste si l'element est déjà dans le panier (donc on ajoute des exemplaires)
             for (i=0;i<Panier.length;i++){
-                if (Panier[i].id==ProduitID){
+                if (Panier[i].id===ProduitID){
                     Trouve=true;
                     break;
                 }
@@ -158,13 +168,13 @@ function initProduit(){
 
             }
             else{//L'element n'était pas présent, on ajoute donc un element au tableau
-                Panier.push({id:parseInt(ProduitID),Qt:ProduitQt});
+                Panier.push({id:ProduitID,Qt:ProduitQt});
             }
 
         }
         else{ //Sinon, pas de panier existant. On doit en créer un
             console.log(Panier);
-            Panier=[{id:parseInt(ProduitID),Qt:ProduitQt}];
+            Panier=[{id:ProduitID,Qt:ProduitQt}];
         }
 
         //Replace le nouveau panier dans le cache

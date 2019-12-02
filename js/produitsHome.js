@@ -3,7 +3,7 @@ function afficherProduit(prod){
     caseProduit.setAttribute("id", prod.id);
     caseProduit.querySelector("img").src = "img/"+prod.id+".jpg";
     caseProduit.querySelector("h4").innerHTML = prod.nom;
-    caseProduit.querySelector(".description").innerHTML = prod.categorie;
+    caseProduit.querySelector(".description").innerHTML = getCategorie(prod.categorie);
     caseProduit.querySelector(".price").innerHTML = prod.prix;
 
     return caseProduit;
@@ -95,4 +95,17 @@ function startCarousel() {
     $('.next').click(function(){ $('.carousel').carousel('next');return false; });
     $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
 
+}
+
+function getCategorie(categorie){
+    switch (categorie) {
+        case 0: return "Mathématique";
+        case 1: return "Philosophie";
+        case 2: return "SVT";
+        case 3: return "Informatique";
+        case 4: return "Langue";
+        case 5: return "Littérature";
+        case 6: return "Religon";
+        default : return false;
+    }
 }
