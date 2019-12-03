@@ -26,3 +26,12 @@
 #iconPanier{
     color: black;
 }
+
+.headProduits{
+    width: 100%;
+    background-color: #5b7412;
+    display: flex;
+}
+.logo{
+    width: 100px;
+}

@@ -35,7 +35,7 @@ function creerCase(){
     prix.setAttribute("class", "price");
     details.appendChild(prix);
     let acheter = document.createElement("a");
-    acheter.setAttribute("class", "btn btn-info pull-right ml-auto");
+    acheter.setAttribute("class", "btn btn-buy pull-right ml-auto");
     acheter.innerHTML = "<i class=\"icon-shopping-cart\"></i> Acheter";
     details.appendChild(acheter);
 
@@ -108,4 +108,20 @@ function getCategorie(categorie){
         case 6: return "Religon";
         default : return false;
     }
+}
+
+function produitFiltrer(categorie){
+    document.querySelector("#lesProduits").innerHTML = "";
+    bdd.forEach(function(produit){
+        if(produit.categorie == categorie) {
+            let caseProduit = afficherProduit(produit);
+            caseProduit.addEventListener("click", function (e) {
+                // console.log(this.id);
+                window.location.hash = "produit-" + caseProduit.id;
+                console.log("changement de hash");
+                e.preventDefault();
+            })
+            document.querySelector("#lesProduits").appendChild(caseProduit);
+        }
+    })
 }

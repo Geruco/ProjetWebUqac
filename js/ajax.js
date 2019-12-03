@@ -30,6 +30,13 @@ function getHome(){
         success: function (data) {
             document.querySelector("#content").innerHTML += data;
             // console.log(data);
+            document.querySelectorAll(".filtre").forEach(function(lien){
+                lien.addEventListener("click", function (e) {
+                    console.log("clicked : ", this.id);
+                    e.preventDefault();
+                    produitFiltrer(this.id);
+                });
+            });
             toutProduits();
             enVedette();
         }
@@ -49,7 +56,7 @@ function getProduit(){
 }
 function getFooter(){
     $.ajax({
-        url: "produit.html",
+        url: "footer.html",
         type: 'GET',
         success: function (data) {
             document.querySelector("#content").innerHTML += data;
