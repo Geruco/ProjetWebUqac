@@ -1,5 +1,4 @@
 function initProduit(){
-
     function loadSuggestion(Numero,id){
         let Receveur;
         let Item;
