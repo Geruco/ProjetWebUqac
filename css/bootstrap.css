@@ -4354,8 +4354,9 @@ input[type="button"].btn-block {
   white-space: nowrap;
 }
 
-.navbar-brand:hover, .navbar-brand:focus {
+.navbar-brand:hover, .navbar-brand:focus, .nav-link:hover {
   text-decoration: none;
+  cursor: pointer;  
 }
 
 .navbar-nav {
