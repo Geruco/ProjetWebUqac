@@ -21,6 +21,7 @@ function creerCase(){
     produit.appendChild(img);
 
     let info = document.createElement("div");
+    info.setAttribute("class", "descProd px-2 py-3");
     caseProduit.appendChild(info);
     let titre = document.createElement("h4");
     info.appendChild(titre);
