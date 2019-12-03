@@ -1,7 +1,18 @@
 function initProduit(){
 
-    function loadSuggestion(Numero,Item){
+    function loadSuggestion(Numero,id){
         let Receveur;
+        let Item;
+        DEBUG && console.log("id : ",id);
+        for(let i=0; i<bdd.length;i++){
+
+            if(id == bdd[i].id){
+
+                Item = bdd[i];
+                DEBUG && console.log(Item);
+            }
+        }
+
         //Identifie pour quelle suggestion on fait la fonction
         switch (Numero) {
             case 0:
@@ -34,7 +45,7 @@ function initProduit(){
         SuggLien.onclick=function(e){
             // goProduit(Item.id);
             window.location.hash = "produit-"+Item.id;
-            console.log("changement de hash");
+            DEBUG && console.log("changement de hash");
             e.preventDefault();
         }
         //Assemble la carte
@@ -54,12 +65,18 @@ function initProduit(){
     // LienSuivis=document.location.href;
     // ValeurID=LienSuivis.search(/\?Id=\d*/);
     // SousStr=LienSuivis.substr(ValeurID+4,LienSuivis.length-1);
-    ProduitID = location.hash.split("produit-")[1];
+    ProduitID = parseInt(location.hash.split("produit-")[1]);
+    DEBUG && console.log("hash : ", ProduitID);
      // ProduitID=produitRecuperer;
 
 
-
-    Produit = bdd[ProduitID-1];
+    for(let i=0; i<bdd.length;i++){
+        if(ProduitID == bdd[i].id){
+            Produit = bdd[i];
+        }
+    }
+    // Produit = bdd[ProduitID-1];
+    DEBUG && console.log(Produit);
     // Produit=bdd[ProduitID-1];
 
     //Mise en place de la bonne image
@@ -100,24 +117,25 @@ function initProduit(){
     //-------------------------------------------------------------
     //Ajoute trois produits aléatoires aux suggestions
     let IdSugg1, IdSugg2, IdSugg3;
-    IdSugg1=Math.floor((Math.random() * 50));   //nombre entre 0 et 49
-    IdSugg2=Math.floor((Math.random() * 50));
-    IdSugg3=Math.floor((Math.random() * 50));
+    IdSugg1=Math.floor(Math.random() * (bdd.length - 0 + 1)) + 0;   //nombre entre 0 et 49
+    IdSugg2=Math.floor(Math.random() * (bdd.length - 0 + 1)) + 0;
+    IdSugg3=Math.floor(Math.random() * (bdd.length - 0 + 1)) + 0;
 
     //S'assure que les trois suggestion soient differentes entre elle et du produit
     while(IdSugg1===ProduitID-1){
-        IdSugg1=Math.floor((Math.random() * 50));
+        IdSugg1=Math.floor(Math.random() * (bdd.length - 0 + 1)) + 0;
     }
     while(IdSugg2===ProduitID-1||IdSugg2===IdSugg1){
-        IdSugg2=Math.floor((Math.random() * 50));
+        IdSugg2=Math.floor(Math.random() * (bdd.length - 0 + 1)) + 0;
     }
     while(IdSugg3===ProduitID-1||IdSugg3===IdSugg1 ||IdSugg3===IdSugg2){
-        IdSugg3=Math.floor((Math.random() * 50));
+        IdSugg3=Math.floor(Math.random() * (bdd.length - 0 + 1)) + 0;
     }
 
-    loadSuggestion(0,bdd[IdSugg1]);
-    loadSuggestion(1,bdd[IdSugg2]);
-    loadSuggestion(2,bdd[IdSugg3]);
+
+    loadSuggestion(0,IdSugg1);
+    loadSuggestion(1,IdSugg2);
+    loadSuggestion(2,IdSugg3);
 
     //------------------------------------------------------------------------------------------
     //Bouton d'ajout au panier
@@ -148,11 +166,11 @@ function initProduit(){
             if(Trouve){
                 //Si la valeur de quantite était invalide (ex: si on avait vider la valeur de l'input et appuyer sur le bouton)
                 if (Panier[i].Qt == null){
-                    console.log(Panier);
+                    DEBUG && console.log(Panier);
                     Panier[i].Qt = ProduitQt;   //Remplace la Qt par la valeur de l'input
                 }
                 else{   //Sinon, peut juste faire une addition
-                    console.log(Panier);
+                    DEBUG && console.log(Panier);
                     Panier[i].Qt=Panier[i].Qt+ProduitQt;
                 }
 
@@ -163,14 +181,14 @@ function initProduit(){
 
         }
         else{ //Sinon, pas de panier existant. On doit en créer un
-            console.log(Panier);
+            DEBUG && console.log(Panier);
             Panier=[{id:parseInt(ProduitID),Qt:ProduitQt}];
         }
 
         //Replace le nouveau panier dans le cache
-        console.log(Panier);
+        DEBUG && console.log(Panier);
         localStorage.setItem("Panier",JSON.stringify(Panier));
-        console.log(localStorage);
+        DEBUG && console.log(localStorage);
     }
 
 }

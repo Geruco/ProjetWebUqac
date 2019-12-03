@@ -35,3 +35,22 @@
 .logo{
     width: 100px;
 }
+
+#showPanier{
+    background-color: #343a40;
+    border: 1px solid #5B7412;
+    color: white;
+    width: 8%;
+    height: 10%;
+    transition: 0.5s;
+}
+#showPanier:hover{
+    background-color: #5B7412;
+    border: 1px solid #5B7412;
+    color: white;
+}
+
+.centered {
+    justify-content: center;
+    align-items: center;
+}

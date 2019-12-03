@@ -1,5 +1,5 @@
 window.addEventListener("load", function(){
-
+    DEBUG = false;
     // window.history.pushState("object or string", "Title", "/new-url");
     getHash();
 

@@ -46,9 +46,9 @@ function toutProduits(){
     bdd.forEach(function(produit){
         let caseProduit = afficherProduit(produit);
         caseProduit.addEventListener("click", function(e){
-            // console.log(this.id);
+            // DEBUG && console.log(this.id);
             window.location.hash = "produit-"+caseProduit.id;
-            console.log("changement de hash");
+            DEBUG && console.log("changement de hash");
             e.preventDefault();
         })
         document.querySelector("#lesProduits").appendChild(caseProduit);
@@ -60,15 +60,15 @@ function enVedette(){
     bdd.forEach(function(produit){
         if(produit.priorite == 1) {
 
-            console.log("modulo : "+nbProd+" / 3 =", nbProd%3);
+            DEBUG && console.log("modulo : "+nbProd+" / 3 =", nbProd%3);
             if(nbProd%3 == 0 || nbProd == 0){
                 let newSlide = document.createElement("div");
                 newSlide.setAttribute("class", "carousel-item");
                 let row = document.createElement("div");
-                row.setAttribute("class", "row");
+                row.setAttribute("class", "row centered");
                 newSlide.appendChild(row);
 
-                // console.log("carousel-inner : ", document.querySelector(".carousel-inner"));
+                // DEBUG && console.log("carousel-inner : ", document.querySelector(".carousel-inner"));
                 document.querySelector(".carousel-inner").appendChild(newSlide);
                 if(document.querySelectorAll(".carousel-item").length === 1){
                     newSlide.classList.add("active");
@@ -76,12 +76,12 @@ function enVedette(){
             }
             let caseProduit = afficherProduit(produit);
             caseProduit.addEventListener("click", function(e){
-                // console.log(caseProduit.id);
+                // DEBUG && console.log(caseProduit.id);
                 window.location.hash = "produit-"+caseProduit.id;
-                console.log("changement de hash");
+                DEBUG && console.log("changement de hash");
                 e.preventDefault();
             })
-            console.log("Trunc : ", Math.trunc(nbProd/3))
+            DEBUG && console.log("Trunc : ", Math.trunc(nbProd/3))
             document.querySelectorAll(".carousel-item")[Math.trunc(nbProd/3)].querySelector(".row").appendChild(caseProduit);
             nbProd ++;
         }
@@ -116,9 +116,9 @@ function produitFiltrer(categorie){
         if(produit.categorie == categorie) {
             let caseProduit = afficherProduit(produit);
             caseProduit.addEventListener("click", function (e) {
-                // console.log(this.id);
+                // DEBUG && console.log(this.id);
                 window.location.hash = "produit-" + caseProduit.id;
-                console.log("changement de hash");
+                DEBUG && console.log("changement de hash");
                 e.preventDefault();
             })
             document.querySelector("#lesProduits").appendChild(caseProduit);
