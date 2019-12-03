@@ -17,7 +17,7 @@ function initPanier() {
   }
 
   // localStorage.setItem("panier", JSON.stringify([{id:5, qte:3},{id:2, qte:1}]));
-  document.getElementById("total").innerHTML = "Total: " + total + " $";
+  document.getElementById("total").innerHTML = "Total: " + Number.parseFloat(total).toFixed(2) + " $";
 }
 
 
@@ -40,6 +40,7 @@ function addPanier(elem) {
   let id = elem.id;
   let quantite = elem.Qt;
   let div = document.createElement("div");
+  let divTitre = document.createElement("div");             //Jai add une ligne ici
   let img = document.createElement("img");
   let titre = document.createElement("p");
   let qt = document.createElement("p");
@@ -49,8 +50,10 @@ function addPanier(elem) {
   img.src = "img/" + id + ".jpg";
   div.appendChild(img);
   titre.innerHTML = bdd[id - 1].nom;
-
-  div.appendChild(titre);
+  titre.className="titreModal";                                   //Jai add une ligne ici
+  divTitre.appendChild(titre);                                    //Jai modifier une ligne ici
+  divTitre.className="divTitreModal";                             //Jai add une ligne ici
+  div.appendChild(divTitre);                                      //Jai modifier une ligne ici
   input.type = "number";
   input.value = quantite;
   input.className = "ipt";
@@ -75,9 +78,11 @@ function addPanier(elem) {
   };
 
   qt.appendChild(input);
+  qt.className="qtModal";                                       //Jai add une ligne ici
   div.appendChild(qt);
   prix.innerHTML = bdd[id - 1].prix + " $/unité";
   div.appendChild(prix);
+  prix.className="prixModal";                                    //Jai add une ligne ici
   btnDelete.className = "btnDelete";
   btnDelete.innerHTML = "Supprimer";
   btnDelete.onclick = function evt() {
@@ -127,6 +132,6 @@ function modifTotal() {
     let prix2 = children[3].innerHTML.replace(" $/unité", "");
     total += ((prix2) * (ipt[i].value));
   }
-  document.getElementById("total").innerHTML = "Total: " + total + " $";
+  document.getElementById("total").innerHTML = "Total: " + Number.parseFloat(total).toFixed(2) + " $";
 }
 
