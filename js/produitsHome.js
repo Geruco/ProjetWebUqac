@@ -4,14 +4,14 @@ function afficherProduit(prod){
     caseProduit.querySelector("img").src = "img/"+prod.id+".jpg";
     caseProduit.querySelector("h4").innerHTML = prod.nom;
     caseProduit.querySelector(".description").innerHTML = getCategorie(prod.categorie);
-    caseProduit.querySelector(".price").innerHTML = prod.prix;
+    caseProduit.querySelector(".price").innerHTML = prod.prix + "$";
 
     return caseProduit;
 }
 
 function creerCase(){
     let caseProduit = document.createElement("div");
-    caseProduit.setAttribute("class", "block col-3 p-0 m-3 caseProduit");
+    caseProduit.setAttribute("class", "block col-2 p-0 m-2 caseProduit");
 
     let produit = document.createElement("div");
     produit.setAttribute("class", "product");

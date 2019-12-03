@@ -28,7 +28,7 @@ function initProduit(){
         SuggImg.classList="card-img-top ImageSuggestion";
 
         let SuggDiv=document.createElement("div");
-        SuggDiv.classList="card-body";
+        SuggDiv.classList="card-body p-3 border-box";
 
         let SuggNom=document.createElement("h5");
         SuggNom.classList="card-title";
@@ -39,8 +39,8 @@ function initProduit(){
         SuggPrix.innerText=Item.prix+"$";
 
         let SuggLien=document.createElement("a");
-        SuggLien.classList="btn btn-primary";
-        SuggLien.innerText="Visiter la page";
+        SuggLien.classList="btn btn-buy";
+        SuggLien.innerText="Savoir +";
         SuggLien.onclick=function(e){
             // goProduit(Item.id);
             window.location.hash = "produit-"+Item.id;

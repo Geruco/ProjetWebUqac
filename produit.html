@@ -1,19 +1,22 @@
 <div id="container">
     <div id="Conteneurimage">
     </div>
-    <div id="ConteneurInfos">
+    <div id="ConteneurInfos" class="d-flex justify-content-center px-4 flex-column">
         <div><b id="Titre">Titre du libre</b></div>
-        <div id="AuteurEditeurDate">auteur,éditeur, date</div>
+        <div id="AuteurEditeurDate" class="mb-3">auteur,éditeur, date</div>
+        <div id="ConteneurResume">Resume: <span id="Resume"></span></div>
     </div>
 
-    <div id="ConteneurResume">Resume: <span id="Resume"></span></div>
+
 
     <div id="ConteneurAchat" class="card">
-        <div id="ConteneurPrix"><b>Prix: </b><span id="Prix"></span></div>
+        <div id="ConteneurPrix" class="d-flex justify-content-center align-items-center">
+            <b class="p-0 m-0 mr-1">Prix: </b><span id="Prix"></span>
+        </div>
 
         <div id="ConteneurQuantite">
-            <input id="QuantiteAchat" value="1" type="number" min="1">
-            <button id="BoutonAchat">Acheter</button>
+            <input id="QuantiteAchat" value="1" type="number" class="mb-2" min="1">
+            <button id="BoutonAchat" class="btn btn-success">Acheter</button>
 
         </div>
 

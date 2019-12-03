@@ -83,7 +83,7 @@ function addPanier(elem) {
   prix.innerHTML = bdd[id - 1].prix + " $/unité";
   div.appendChild(prix);
   prix.className="prixModal";                                    //Jai add une ligne ici
-  btnDelete.className = "btnDelete";
+  btnDelete.className = "btnDelete btn btn-danger";
   btnDelete.innerHTML = "Supprimer";
   btnDelete.onclick = function evt() {
     let button = this;

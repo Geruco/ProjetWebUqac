@@ -50,7 +50,7 @@ html, body{
 
 #ConteneurInfos{
     grid-column: 2/4;
-    grid-row: 2/4;
+    grid-row: 3/5;
     padding: 10px;
 
 }
@@ -59,8 +59,6 @@ html, body{
 }
 
 #ConteneurResume{
-    grid-column: 2/4;
-    grid-row: 4/6 ;
     padding-left:5px ;
 }
 #ConteneurAchat{
@@ -99,7 +97,6 @@ html, body{
     grid-row: 2/3;
 
     width: 60%;
-    height: 35%;
     margin-left: 20%;
     margin-right: 20%;
 
@@ -120,9 +117,7 @@ html, body{
     grid-row: 2/3;
 
 }
-#AuteurEditeurDate, #Prix, #Resume{
-    margin-left: 10px;
-}
+
 
 #ConteneurPanier{
     background-color: green;
