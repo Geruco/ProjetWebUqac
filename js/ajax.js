@@ -1,23 +1,22 @@
-function getHeader() {
+function getHeader(route) {
     $.ajax({
         url: "header.html",
         type: 'GET',
         success: function (data) {
             document.querySelector("#header").innerHTML = data;
             // console.log(data);
-        }
-    });
-    $.ajax({
-        url: "panier.html",
-        type: 'GET',
-        success: function (data) {
-            document.querySelector("#content").innerHTML = data;
-            // console.log(data);
-            setTimeout(function() {
-                document.querySelector("#showPanier").addEventListener("click", function () {
-                    initPanier();
-                });
-            },500);
+            $.ajax({
+                url: "panier.html",
+                type: 'GET',
+                success: function (data) {
+                    document.querySelector("#content").innerHTML = data;
+                    // console.log(data);
+                    document.querySelector("#showPanier").addEventListener("click", function () {
+                        initPanier();
+                    });
+                    loadPage(route);
+                }
+            });
         }
     });
 }
@@ -63,4 +62,13 @@ function getFooter(){
             // console.log(data);
         }
     });
+}
+
+function loadPage(route){
+    switch (route) {
+        case "produit":getProduit();
+            break;
+        default: getHome();
+            break;
+    }
 }

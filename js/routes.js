@@ -1,17 +1,13 @@
 function goHome(){
     document.getElementById("content").innerHTML = "";
-    setTimeout(function(){
-        getHeader();
-        getHome();
-    }, 500);
+        getHeader("home");
+        // getHome();
     // getFooter();
 }
 function goProduit(){
     document.getElementById("content").innerHTML = "";
-    setTimeout(function(){
-        getHeader();
-        getProduit();
+        getHeader("produit");
+        // getProduit();
         // getFooter();
         window.scrollTo(0,0);
-    }, 500);
 }
